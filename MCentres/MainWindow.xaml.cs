@@ -24,7 +24,7 @@ using Microsoft.UI.Xaml.Media.Animation;
 // To learn more about WinUI, the WinUI project structure,
 // and more about our project templates, see: http://aka.ms/winui-project-info.
 
-namespace MCentres
+namespace MCInstaller
 {
 	/// <summary>
 	/// An empty window that can be used on its own or navigated to within a Frame.
@@ -50,7 +50,7 @@ namespace MCentres
 				titleBar.ExtendsContentIntoTitleBar = true;
 				void SetColor()
                 {
-					appWindow.Title = "MCentres";
+					appWindow.Title = "MCInstaller";
 					titleBar.ExtendsContentIntoTitleBar = true;
 					titleBar.ButtonBackgroundColor = Colors.Transparent;
 					titleBar.ButtonInactiveBackgroundColor = Colors.Transparent;

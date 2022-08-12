@@ -1,48 +1,43 @@
 ﻿<Page
-    x:Class="MCentres.HomePage"
+    x:Class="MCInstaller.HomePage"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:local="using:MCentres"
+    xmlns:local="using:MCInstaller"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    mc:Ignorable="d">
+    mc:Ignorable="d"
+	Background="Transparent">
 	<Grid>
-		<!--<StackPanel Spacing="4">
-			<StackPanel VerticalAlignment="Top" Orientation="Horizontal" Margin="8" Spacing="8">
-				<Image Source="Images/square44x44logo.targetsize-24_altform-unplated.png" Height="16" Width="16"/>
-				<TextBlock Style="{StaticResource CaptionTextBlockStyle}" Text="MCentres"/>
-			</StackPanel>-->
-			<Frame x:Name="rootFrame"/>
-			<StackPanel Orientation="Vertical" Spacing="5" Margin="8">
-				<TextBlock Style="{StaticResource HeaderTextBlockStyle}">Information about the options shown</TextBlock>
-				<Grid HorizontalAlignment="Stretch" CornerRadius="8" Background="{StaticResource SystemAltLowColor}">
-					<StackPanel Orientation="Horizontal" Spacing="8" Margin="8">
-						<FontIcon Glyph="&#xEC7A;"/>
-						<StackPanel Orientation="Vertical" Spacing="4">
-							<TextBlock Style="{StaticResource SubtitleTextBlockStyle}">Install</TextBlock>
-							<TextBlock Style="{StaticResource CaptionTextBlockStyle}">Installs the game automatically/manually</TextBlock>
-						</StackPanel>
+		<Frame x:Name="rootFrame"/>
+		<StackPanel Orientation="Vertical" Spacing="5" Margin="8">
+			<TextBlock Style="{StaticResource HeaderTextBlockStyle}">Information about the options shown</TextBlock>
+			<Grid HorizontalAlignment="Stretch" CornerRadius="8" Background="{StaticResource SystemAltLowColor}">
+				<StackPanel Orientation="Horizontal" Spacing="8" Margin="8">
+					<FontIcon Glyph="&#xEC7A;"/>
+					<StackPanel Orientation="Vertical" Spacing="4">
+						<TextBlock Style="{StaticResource SubtitleTextBlockStyle}">Install</TextBlock>
+						<TextBlock Style="{StaticResource CaptionTextBlockStyle}">Installs the game automatically/manually</TextBlock>
 					</StackPanel>
-				</Grid>
-				<Grid HorizontalAlignment="Stretch" CornerRadius="8" Background="{StaticResource SystemAltLowColor}">
-					<StackPanel Orientation="Horizontal" Spacing="8" Margin="8">
-						<FontIcon Glyph="&#xE74D;"/>
-						<StackPanel Orientation="Vertical" Spacing="4">
-							<TextBlock Style="{StaticResource SubtitleTextBlockStyle}">Uninstall</TextBlock>
-							<TextBlock Style="{StaticResource CaptionTextBlockStyle}">Uninstalls the game automatically/manually</TextBlock>
-						</StackPanel>
+				</StackPanel>
+			</Grid>
+			<Grid HorizontalAlignment="Stretch" CornerRadius="8" Background="{StaticResource SystemAltLowColor}">
+				<StackPanel Orientation="Horizontal" Spacing="8" Margin="8">
+					<FontIcon Glyph="&#xE74D;"/>
+					<StackPanel Orientation="Vertical" Spacing="4">
+						<TextBlock Style="{StaticResource SubtitleTextBlockStyle}">Uninstall</TextBlock>
+						<TextBlock Style="{StaticResource CaptionTextBlockStyle}">Uninstalls the game automatically/manually</TextBlock>
 					</StackPanel>
-				</Grid>
-				<Grid HorizontalAlignment="Stretch" CornerRadius="8" Background="{StaticResource SystemAltLowColor}">
-					<StackPanel Orientation="Horizontal" Spacing="8" Margin="8">
-						<FontIcon Glyph="&#xE713;"/>
-						<StackPanel Orientation="Vertical" Spacing="4">
-							<TextBlock Style="{StaticResource SubtitleTextBlockStyle}">Settings</TextBlock>
-							<TextBlock Style="{StaticResource CaptionTextBlockStyle}">Change app functionality and behaviour</TextBlock>
-						</StackPanel>
+				</StackPanel>
+			</Grid>
+			<Grid HorizontalAlignment="Stretch" CornerRadius="8" Background="{StaticResource SystemAltLowColor}">
+				<StackPanel Orientation="Horizontal" Spacing="8" Margin="8">
+					<FontIcon Glyph="&#xE713;"/>
+					<StackPanel Orientation="Vertical" Spacing="4">
+						<TextBlock Style="{StaticResource SubtitleTextBlockStyle}">Settings</TextBlock>
+						<TextBlock Style="{StaticResource CaptionTextBlockStyle}">Change app functionality and behaviour</TextBlock>
 					</StackPanel>
-				</Grid>
-			</StackPanel>
-		<!--</StackPanel>-->
+				</StackPanel>
+			</Grid>
+		</StackPanel>
 	</Grid>
 </Page>

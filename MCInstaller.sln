@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.2.32630.192
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{C7167F0D-BC9F-4E6E-AFE1-012C56B48DB5}") = "MCentres (Package)", "MCentres (Package)\MCentres (Package).wapproj", "{6C8AA704-5E43-4F2B-8FD6-FB9DA6712604}"
+Project("{C7167F0D-BC9F-4E6E-AFE1-012C56B48DB5}") = "MCInstaller (Package)", "MCentres (Package)\MCInstaller (Package).wapproj", "{6C8AA704-5E43-4F2B-8FD6-FB9DA6712604}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MCentres", "MCentres\MCentres.csproj", "{D123F1B0-17B5-4C1A-A15E-C46C584E7DE6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MCInstaller", "MCentres\MCInstaller.csproj", "{D123F1B0-17B5-4C1A-A15E-C46C584E7DE6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
