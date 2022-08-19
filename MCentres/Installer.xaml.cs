@@ -33,7 +33,7 @@ namespace MCInstaller
 	/// </summary>
 	public sealed partial class Installer : Page
     {
-        public string currentbuild;
+        string currentbuild;
         static Uri requestUri = new Uri("https://github.com/donut2008/MCInstaller/");
 		static HttpClient httpClient = new HttpClient();
 		public Installer()
@@ -52,8 +52,8 @@ namespace MCInstaller
 
 		private async void Install_Click(object sender, RoutedEventArgs e)
 		{
-            string X64DL = "C:\\ProgramData\\MCInstaller\\DLLs\\x64\\" + currentbuild;
-            string X86DL = "C:\\ProgramData\\MCInstaller\\DLLs\\x86\\" + currentbuild;
+            string X64DL = "C:\\ProgramData\\MCInstaller\\DLLs\\x64\\" + currentbuild, X86DL = "C:\\ProgramData\\MCInstaller\\DLLs\\x86\\" + currentbuild;
+            string X64Link = "https://github.comdonut2008/MCInstaller/";
 			var headers = httpClient.DefaultRequestHeaders;
 			string header = "ie";
 			if (!headers.UserAgent.TryParseAdd(header))
@@ -97,6 +97,7 @@ namespace MCInstaller
 				};
 				await HttpError.ShowAsync();
             }
+			
 
         }
 
