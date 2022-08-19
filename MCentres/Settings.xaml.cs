@@ -37,55 +37,16 @@ namespace MCInstaller
             switch (ThemeIndex)
             {
                 case 0:
-                    try
-                    {
-                        (this.XamlRoot.Content as FrameworkElement).RequestedTheme = ElementTheme.Light;
-                    }
-                    catch (NullReferenceException ex)
-                    {
-                        ContentDialog themeChangeError = new ContentDialog()
-                        {
-                            Title = "Error changing theme",
-                            Content = ex.Message.ToString(),
-                            CloseButtonText = "Close"
-                        };
-                        await themeChangeError.ShowAsync();
-                    }
+                    (this.XamlRoot.Content as FrameworkElement).RequestedTheme = ElementTheme.Light;
                     break;
                 case 1:
-                    try
-                    {
-                        (this.XamlRoot.Content as FrameworkElement).RequestedTheme = ElementTheme.Dark;
-                    }
-                    catch (NullReferenceException ex)
-                    {
-                        ContentDialog themeChangeError = new ContentDialog()
-                        {
-                            Title = "Error changing theme",
-                            Content = ex.Message.ToString(),
-                            CloseButtonText = "Close"
-                        };
-                        await themeChangeError.ShowAsync();
-                    }
+                    (this.XamlRoot.Content as FrameworkElement).RequestedTheme = ElementTheme.Dark;
                     break;
-				case 2:
-                    try
-                    {
-                        (this.XamlRoot.Content as FrameworkElement).RequestedTheme = ElementTheme.Default;
-                    }
-                    catch (NullReferenceException ex)
-                    {
-                        ContentDialog themeChangeError = new ContentDialog()
-                        {
-                            Title = "Error changing theme",
-                            Content = ex.Message.ToString(),
-                            CloseButtonText = "Close"
-                        };
-                        await themeChangeError.ShowAsync();
-                    }
+                case 2:
+                    (this.XamlRoot.Content as FrameworkElement).RequestedTheme = ElementTheme.Default;
                     break;
-			}
-		}
+            }
+        }
 
 		private void BackButton_Click(object sender, RoutedEventArgs e)
 		{
