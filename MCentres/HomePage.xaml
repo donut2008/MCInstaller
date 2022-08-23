@@ -1,16 +1,15 @@
 ﻿<Page
-    x:Class="MCInstaller.HomePage"
-    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:local="using:MCInstaller"
-    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    mc:Ignorable="d"
-	Background="Transparent">
+	x:Class="MCInstaller.HomePage"
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:local="using:MCInstaller"
+	xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+	mc:Ignorable="d">
 	<Grid>
 		<Frame x:Name="rootFrame"/>
 		<StackPanel Orientation="Vertical" Spacing="5" Margin="8">
-			<TextBlock Style="{StaticResource HeaderTextBlockStyle}">Information about the options shown</TextBlock>
+			<TextBlock Style="{StaticResource HeaderTextBlockStyle}">Available options</TextBlock>
 			<Grid HorizontalAlignment="Stretch" CornerRadius="8" Background="{StaticResource SystemAltLowColor}">
 				<StackPanel Orientation="Horizontal" Spacing="8" Margin="8">
 					<FontIcon Glyph="&#xEC7A;"/>

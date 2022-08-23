@@ -5,17 +5,16 @@
 	xmlns:local="using:MCInstaller"
 	xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
 	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-	mc:Ignorable="d"
-	Background="Transparent">
+	mc:Ignorable="d">
 	<Grid>
 		<Frame x:Name="rootFrame"/>
 		<StackPanel Orientation="Vertical" Spacing="5">
 			<StackPanel Orientation="Horizontal" Spacing="5" Margin="8">
 				<Button x:Name="BackButton"
-						HorizontalContentAlignment="Center"
-						VerticalContentAlignment="Center"
-						Click="BackButton_Click"
-						ToolTipService.ToolTip="Back to home">
+				        HorizontalContentAlignment="Center"
+				        VerticalContentAlignment="Center"
+				        Click="BackButton_Click"
+				        ToolTipService.ToolTip="Back to home">
 					<Button.Content>
 						<FontIcon FontSize="24" Glyph="&#xE80F;"/>
 					</Button.Content>

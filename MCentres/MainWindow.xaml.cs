@@ -62,6 +62,11 @@ namespace MCInstaller
 				RootUI.ActualThemeChanged += (_, _) => SetColor();
 				SetColor();
             }
+            else
+            {
+                ExtendsContentIntoTitleBar = true;
+				SetTitleBar(AppTitleBar);
+            }
 		}
 
 		WindowsSystemDispatcherQueueHelper m_wsdqHelper; // See separate sample below for implementation
@@ -144,7 +149,7 @@ namespace MCInstaller
 				switch (selectedItemTag.Tag.ToString())
 				{
 					case "H":
-						rootFrame.Navigate(typeof(HomePage));
+                        rootFrame.Navigate(typeof(HomePage));
 						break;
 					case "I":
 						rootFrame.Navigate(typeof(Installer));

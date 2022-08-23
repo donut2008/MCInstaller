@@ -11,11 +11,11 @@
     <AssemblyName>MCInstaller</AssemblyName>
   </PropertyGroup>
   <ItemGroup>
-    <None Remove="HomePage_old.xaml" />
-    <None Remove="Installer_old.xaml" />
-    <None Remove="Settings_old.xaml" />
+    <None Remove="HomePage.xaml" />
+    <None Remove="Installer.xaml" />
+    <None Remove="Settings.xaml" />
     <None Remove="Splash.xaml" />
-    <None Remove="Uninstaller_old.xaml" />
+    <None Remove="Uninstaller.xaml" />
   </ItemGroup>
 
   <ItemGroup>
@@ -28,31 +28,31 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Page Update="Uninstaller.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Page Update="Settings.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Page Update="Installer.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Page Update="HomePage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+
+  <ItemGroup>
     <Page Update="Splash.xaml">
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-  </ItemGroup>
-
-  <ItemGroup>
-    <Page Update="Settings_old.xaml">
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-  </ItemGroup>
-
-  <ItemGroup>
-    <Page Update="HomePage_old.xaml">
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-  </ItemGroup>
-
-  <ItemGroup>
-    <Page Update="Uninstaller_old.xaml">
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-  </ItemGroup>
-
-  <ItemGroup>
-    <Page Update="Installer_old.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>

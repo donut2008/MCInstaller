@@ -8,9 +8,9 @@
 	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
 	mc:Ignorable="d">
 	<Grid>
-		<StackPanel VerticalAlignment="Top" Orientation="Horizontal" Margin="8" Spacing="8">
-			<Image Source="Images/square44x44logo.targetsize-24_altform-unplated.png" Height="16" Width="16"/>
-			<TextBlock Style="{StaticResource CaptionTextBlockStyle}" Text="MCInstaller"/>
+		<StackPanel x:Name="AppTitleBar" VerticalAlignment="Top" Orientation="Horizontal" Spacing="8">
+			<Image Source="Images/square44x44logo.targetsize-24_altform-unplated.png" Height="16" Width="16" Margin="8,8,0,8"/>
+			<TextBlock Style="{StaticResource CaptionTextBlockStyle}" Text="MCInstaller" Margin="0,8,8,8"/>
 		</StackPanel>
 		<NavigationView VerticalAlignment="Stretch"
 						x:Name="PageNavigator"

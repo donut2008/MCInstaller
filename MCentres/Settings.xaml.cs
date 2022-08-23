@@ -9,31 +9,30 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Reflection;
 using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
-using WinRT;
+using WinUIEx;
 
 // To learn more about WinUI, the WinUI project structure,
 // and more about our project templates, see: http://aka.ms/winui-project-info.
 
 namespace MCInstaller
 {
-	/// <summary>
-	/// An empty page that can be used on its own or navigated to within a Frame.
-	/// </summary>
-	public sealed partial class Settings : Page
-	{
-		public Settings()
-		{
-			this.InitializeComponent();
-			AppVer.Text = "Version 5.1.047";
-		}
+    /// <summary>
+    /// An empty window that can be used on its own or navigated to within a Frame.
+    /// </summary>
+    public sealed partial class Settings : Page
+    {
+        public Settings()
+        {
+            this.InitializeComponent();
+            AppVer.Text = "Version 6.0.065";
+        }
 
-		private async void ThemeChooser_SelectionChanged(object sender, SelectionChangedEventArgs e)
-		{
-			int ThemeIndex = ThemeChooser.SelectedIndex;
+        private void ThemeChooser_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            int ThemeIndex = ThemeChooser.SelectedIndex;
             switch (ThemeIndex)
             {
                 case 0:
@@ -48,10 +47,10 @@ namespace MCInstaller
             }
         }
 
-		private void BackButton_Click(object sender, RoutedEventArgs e)
-		{
-			if (rootFrame.CanGoBack)
-				rootFrame.GoBack();
-		}
-	}
+        private void BackButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (rootFrame.CanGoBack)
+                rootFrame.GoBack();
+        }
+    }
 }
