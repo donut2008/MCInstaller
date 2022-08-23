@@ -11,39 +11,48 @@
     <AssemblyName>MCInstaller</AssemblyName>
   </PropertyGroup>
   <ItemGroup>
-    <None Remove="HomePage.xaml" />
-    <None Remove="Installer.xaml" />
-    <None Remove="Settings.xaml" />
-    <None Remove="Uninstaller.xaml" />
+    <None Remove="HomePage_old.xaml" />
+    <None Remove="Installer_old.xaml" />
+    <None Remove="Settings_old.xaml" />
+    <None Remove="Splash.xaml" />
+    <None Remove="Uninstaller_old.xaml" />
   </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Microsoft.WindowsAppSDK" Version="1.1.4" />
     <PackageReference Include="Microsoft.Windows.SDK.BuildTools" Version="10.0.22621.1" />
     <PackageReference Include="WinUIEx" Version="1.8.0" />
+    <PackageReference Include="WinUIEx.TestTools" Version="1.0.0" />
+    <PackageReference Include="WinUIEx.TestTools.MSTest" Version="1.0.0" />
     <Manifest Include="$(ApplicationManifest)" />
   </ItemGroup>
 
   <ItemGroup>
-    <Page Update="Settings.xaml">
+    <Page Update="Splash.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
 
   <ItemGroup>
-    <Page Update="HomePage.xaml">
+    <Page Update="Settings_old.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
 
   <ItemGroup>
-    <Page Update="Uninstaller.xaml">
+    <Page Update="HomePage_old.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
 
   <ItemGroup>
-    <Page Update="Installer.xaml">
+    <Page Update="Uninstaller_old.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Page Update="Installer_old.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>

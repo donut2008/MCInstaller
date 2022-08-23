@@ -1,4 +1,5 @@
-﻿using Microsoft.UI.Xaml;
+﻿using WinUIEx;
+using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Controls;
 using Microsoft.UI.Xaml.Controls.Primitives;
 using Microsoft.UI.Xaml.Data;
@@ -29,7 +30,7 @@ namespace MCInstaller
 	/// <summary>
 	/// An empty window that can be used on its own or navigated to within a Frame.
 	/// </summary>
-	public sealed partial class MainWindow : Window
+	public sealed partial class MainWindow : WindowEx
 	{
 		public MainWindow()
 		{
