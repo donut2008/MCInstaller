@@ -24,10 +24,14 @@ namespace MCInstaller
     /// </summary>
     public sealed partial class Settings : Page
     {
+        private readonly MainWindow _mw = new MainWindow();
+        private readonly Installer _ins = new Installer();
         public Settings()
         {
             this.InitializeComponent();
-            AppVer.Text = "Version 6.0.065";
+            AppVer.Text = "Version 6.1.095_fix-error";
+            MicaStatus.Text = "Mica backdrop status: " + _mw.MicaInfo.ToString();
+            WinVer.Text = "Windows version: " + _ins.WinBuild;
         }
 
         private void ThemeChooser_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -49,8 +53,8 @@ namespace MCInstaller
 
         private void BackButton_Click(object sender, RoutedEventArgs e)
         {
-            if (rootFrame.CanGoBack)
-                rootFrame.GoBack();
+            if (RootFrame.CanGoBack)
+                RootFrame.GoBack();
         }
     }
 }

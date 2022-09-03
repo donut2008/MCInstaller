@@ -47,6 +47,6 @@ namespace MCInstaller
             splash.Completed += (s, e) => m_window = e;
         }
 
-		public Window m_window;
+		public static Window m_window;
 	}
 }

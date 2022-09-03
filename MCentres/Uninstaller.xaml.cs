@@ -32,7 +32,7 @@ namespace MCInstaller
 
         private void BackButton_Click(object sender, RoutedEventArgs e)
         {
-            rootFrame.Navigate(typeof(MainWindow));
+            RootFrame.Navigate(typeof(MainWindow));
         }
     }
 }

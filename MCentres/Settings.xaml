@@ -7,25 +7,23 @@
 	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
 	mc:Ignorable="d">
 	<Grid>
-		<Frame x:Name="rootFrame"/>
-		<StackPanel Orientation="Vertical" Spacing="5" Margin="8">
-			<StackPanel Orientation="Horizontal" Spacing="5" Margin="8,36,8,8">
+		<Frame x:Name="RootFrame"/>
+		<StackPanel Orientation="Vertical" Spacing="5">
+			<StackPanel Orientation="Horizontal" Spacing="5" Margin="8">
 				<Button x:Name="BackButton"
 				        HorizontalContentAlignment="Center"
 				        VerticalContentAlignment="Center"
-				        VerticalAlignment="Top"
-				        HorizontalAlignment="Left"
 				        Click="BackButton_Click"
 				        ToolTipService.ToolTip="Back to home">
 					<Button.Content>
 						<FontIcon FontSize="24" Glyph="&#xE80F;"/>
 					</Button.Content>
 				</Button>
-				<TextBlock Style="{StaticResource HeaderTextBlockStyle}" Text="Settings"/>
+				<TextBlock Style="{StaticResource HeaderTextBlockStyle}" Text="Settings" VerticalAlignment="Top"/>
 			</StackPanel>
-			<Expander>
+			<Expander HorizontalAlignment="Stretch" HorizontalContentAlignment="Left">
 				<Expander.Header>
-					<StackPanel Spacing="5">
+					<StackPanel Spacing="5" Margin="0,8">
 						<TextBlock Style="{StaticResource BodyStrongTextBlockStyle}">Theme</TextBlock>
 						<TextBlock Style="{StaticResource CaptionTextBlockStyle}">Select a theme to display</TextBlock>
 					</StackPanel>
@@ -38,11 +36,19 @@
 					</RadioButtons>
 				</Expander.Content>
 			</Expander>
-			<Expander Header="App information">
+			<Expander HorizontalAlignment="Stretch" HorizontalContentAlignment="Left">
+				<Expander.Header>
+					<StackPanel Spacing="5" Margin="0,8">
+						<TextBlock Style="{StaticResource BodyStrongTextBlockStyle}">App information</TextBlock>
+						<TextBlock Style="{StaticResource CaptionTextBlockStyle}">Information about app and debug info</TextBlock>
+					</StackPanel>
+				</Expander.Header>
 				<Expander.Content>
 					<StackPanel Spacing="5">
 						<TextBlock Style="{StaticResource BodyTextBlockStyle}">Developed by <Hyperlink xml:space="preserve" NavigateUri="https://github.com/donut2008">donut2008</Hyperlink>.</TextBlock>
-						<TextBlock Style="{StaticResource CaptionTextBlockStyle}" x:Name="AppVer"/>
+						<TextBlock Style="{StaticResource BodyTextBlockStyle}" x:Name="AppVer"/>
+						<TextBlock Style="{StaticResource BodyTextBlockStyle}" x:Name="MicaStatus"/>
+						<TextBlock Style="{StaticResource BodyTextBlockStyle}" x:Name="WinVer"/>
 					</StackPanel>
 				</Expander.Content>
 			</Expander>

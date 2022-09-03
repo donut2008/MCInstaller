@@ -1,4 +1,5 @@
 ﻿<winex:WindowEx
+	x:Name="MWindow"
 	xmlns:winex="using:WinUIEx"
 	x:Class="MCInstaller.MainWindow"
 	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
@@ -8,7 +9,7 @@
 	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
 	mc:Ignorable="d">
 	<Grid>
-		<StackPanel x:Name="AppTitleBar" VerticalAlignment="Top" Orientation="Horizontal" Spacing="8">
+		<StackPanel x:Name="AppTitleBar" VerticalAlignment="Top" Orientation="Horizontal" Spacing="8" Margin="0">
 			<Image Source="Images/square44x44logo.targetsize-24_altform-unplated.png" Height="16" Width="16" Margin="8,8,0,8"/>
 			<TextBlock Style="{StaticResource CaptionTextBlockStyle}" Text="MCInstaller" Margin="0,8,8,8"/>
 		</StackPanel>
@@ -38,7 +39,7 @@
 				</NavigationViewItem>
 			</NavigationView.MenuItems>
 			<Grid>
-				<Frame x:Name="rootFrame"/>
+				<Frame x:Name="RootFrame"/>
 			</Grid>
 		</NavigationView>
 	</Grid>

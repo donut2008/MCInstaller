@@ -7,7 +7,7 @@
 	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
 	mc:Ignorable="d">
 	<Grid>
-		<Frame x:Name="rootFrame"/>
+		<Frame x:Name="RootFrame"/>
 		<StackPanel Orientation="Vertical" Spacing="5" Margin="8">
 			<TextBlock Style="{StaticResource HeaderTextBlockStyle}">Available options</TextBlock>
 			<Grid HorizontalAlignment="Stretch" CornerRadius="8" Background="{StaticResource SystemAltLowColor}">

@@ -9,7 +9,7 @@
     mc:Ignorable="d">
 	<Grid>
 		<StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center" Spacing="8">
-			<Image Source="/Images/Square44x44Logo.altform-lightunplated_targetsize-256.png"/>
+			<Image Source="/Images/StoreLogo.scale-400.png" Height="200" Width="200"/>
             <TextBlock Style="{StaticResource SubtitleTextBlockStyle}">
                 Welcome to MCInstaller!
             </TextBlock>

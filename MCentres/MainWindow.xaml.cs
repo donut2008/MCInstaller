@@ -20,7 +20,9 @@ using Microsoft.UI.Windowing;
 using WinRT.Interop;
 using Microsoft.UI;
 using Windows.UI.ViewManagement;
+using ABI.Windows.Security.Authentication.Identity.Core;
 using Microsoft.UI.Xaml.Media.Animation;
+using Microsoft.Win32;
 
 // To learn more about WinUI, the WinUI project structure,
 // and more about our project templates, see: http://aka.ms/winui-project-info.
@@ -32,41 +34,66 @@ namespace MCInstaller
 	/// </summary>
 	public sealed partial class MainWindow : WindowEx
 	{
+		public bool MicaInfo;
+
 		public MainWindow()
 		{
 			this.InitializeComponent();
-			TrySetMicaBackdrop();
+			if (TrySetMicaBackdrop() == true)
+				TrySetMicaBackdrop();
+			else
+			{
+				RegistryKey wallpaperSrc = Registry.CurrentUser.OpenSubKey(@"Control Panel\Desktop");
+				var wallpaperPath = wallpaperSrc.GetValue("WallPaper");
+				Image fakeMica = new Image()
+				{
+					Source = (ImageSource)wallpaperPath
+				};
+
+			}
 			SetCustomTitleBar();
+		}
+
+		public IntPtr FindHWND()
+		{
+			IntPtr hwnd = WindowNative.GetWindowHandle(this);
+			return hwnd;
 		}
 
 		UISettings UISettings = new UISettings();
 		private void SetCustomTitleBar()
-        {
+		{
 			var RootUI = (FrameworkElement)Content;
-
-			if(AppWindowTitleBar.IsCustomizationSupported())
-            {
-				AppWindow appWindow = AppWindow.GetFromWindowId(Win32Interop.GetWindowIdFromWindow(WindowNative.GetWindowHandle(this)));
+			if (AppWindowTitleBar.IsCustomizationSupported())
+			{
+				AppWindow appWindow =
+					AppWindow.GetFromWindowId(Win32Interop.GetWindowIdFromWindow(WindowNative.GetWindowHandle(this)));
 				var titleBar = appWindow.TitleBar;
 				titleBar.ExtendsContentIntoTitleBar = true;
+
 				void SetColor()
-                {
+				{
 					appWindow.Title = "MCInstaller";
 					titleBar.ExtendsContentIntoTitleBar = true;
 					titleBar.ButtonBackgroundColor = Colors.Transparent;
 					titleBar.ButtonInactiveBackgroundColor = Colors.Transparent;
 					titleBar.ButtonInactiveForegroundColor = UISettings.GetColorValue(UIColorType.Accent);
-					titleBar.ButtonHoverBackgroundColor = ((SolidColorBrush)App.Current.Resources.ThemeDictionaries["SystemControlBackgroundListLowBrush"]).Color;
-					titleBar.ButtonPressedBackgroundColor = ((SolidColorBrush)App.Current.Resources.ThemeDictionaries["SystemControlBackgroundListMediumBrush"]).Color;
+					titleBar.ButtonHoverBackgroundColor =
+						((SolidColorBrush)App.Current.Resources.ThemeDictionaries[
+							"SystemControlBackgroundListLowBrush"]).Color;
+					titleBar.ButtonPressedBackgroundColor =
+						((SolidColorBrush)App.Current.Resources.ThemeDictionaries[
+							"SystemControlBackgroundListMediumBrush"]).Color;
 				}
+
 				RootUI.ActualThemeChanged += (_, _) => SetColor();
 				SetColor();
-            }
-            else
-            {
-                ExtendsContentIntoTitleBar = true;
+			}
+			else
+			{
+				ExtendsContentIntoTitleBar = true;
 				SetTitleBar(AppTitleBar);
-            }
+			}
 		}
 
 		WindowsSystemDispatcherQueueHelper m_wsdqHelper; // See separate sample below for implementation
@@ -94,10 +121,14 @@ namespace MCInstaller
 
 				// Enable the system backdrop.
 				// Note: Be sure to have "using WinRT;" to support the Window.As<...>() call.
-				m_micaController.AddSystemBackdropTarget(this.As<Microsoft.UI.Composition.ICompositionSupportsSystemBackdrop>());
+				m_micaController.AddSystemBackdropTarget(this
+					.As<Microsoft.UI.Composition.ICompositionSupportsSystemBackdrop>());
 				m_micaController.SetSystemBackdropConfiguration(m_configurationSource);
+				MicaInfo = true;
 				return true; // succeeded
 			}
+
+			MicaInfo = false;
 			return false; // Mica is not supported on this system
 		}
 
@@ -115,6 +146,7 @@ namespace MCInstaller
 				m_micaController.Dispose();
 				m_micaController = null;
 			}
+
 			this.Activated -= Window_Activated;
 			m_configurationSource = null;
 		}
@@ -131,40 +163,46 @@ namespace MCInstaller
 		{
 			switch (((FrameworkElement)this.Content).ActualTheme)
 			{
-				case ElementTheme.Dark: m_configurationSource.Theme = SystemBackdropTheme.Dark; break;
-				case ElementTheme.Light: m_configurationSource.Theme = SystemBackdropTheme.Light; break;
-				case ElementTheme.Default: m_configurationSource.Theme = SystemBackdropTheme.Default; break;
+				case ElementTheme.Dark:
+					m_configurationSource.Theme = SystemBackdropTheme.Dark;
+					break;
+				case ElementTheme.Light:
+					m_configurationSource.Theme = SystemBackdropTheme.Light;
+					break;
+				case ElementTheme.Default:
+					m_configurationSource.Theme = SystemBackdropTheme.Default;
+					break;
 			}
 		}
 
-        private void PageNavigator_SelectionChanged(NavigationView sender, NavigationViewSelectionChangedEventArgs args)
-        {
+		private void PageNavigator_SelectionChanged(NavigationView sender, NavigationViewSelectionChangedEventArgs args)
+		{
 			var selectedItemTag = (NavigationViewItem)args.SelectedItem;
 			if (args.IsSettingsSelected)
 			{
-				rootFrame.Navigate(typeof(Settings));
+				RootFrame.Navigate(typeof(Settings));
 			}
 			else
 			{
 				switch (selectedItemTag.Tag.ToString())
 				{
 					case "H":
-                        rootFrame.Navigate(typeof(HomePage));
+						RootFrame.Navigate(typeof(HomePage));
 						break;
 					case "I":
-						rootFrame.Navigate(typeof(Installer));
+						RootFrame.Navigate(typeof(Installer));
 						break;
 					case "U":
-						rootFrame.Navigate(typeof(Uninstaller));
+						RootFrame.Navigate(typeof(Uninstaller));
 						break;
 				}
 			}
 		}
 
-        private void PageNavigator_BackRequested(NavigationView sender, NavigationViewBackRequestedEventArgs args)
-        {
-			if (rootFrame.CanGoBack)
-				rootFrame.GoBack();
-        }
-    }
+		private void PageNavigator_BackRequested(NavigationView sender, NavigationViewBackRequestedEventArgs args)
+		{
+			if (RootFrame.CanGoBack)
+				RootFrame.GoBack();
+		}
+	}
 }

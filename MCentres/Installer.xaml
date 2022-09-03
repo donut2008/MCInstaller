@@ -7,14 +7,12 @@
 	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
 	mc:Ignorable="d">
 	<Grid>
-		<Frame x:Name="rootFrame"/>
+		<Frame x:Name="RootFrame"/>
 		<StackPanel Orientation="Vertical" Spacing="5">
-			<StackPanel Orientation="Horizontal" Spacing="5" Margin="8,36,8,8">
+			<StackPanel Orientation="Horizontal" Spacing="5" Margin="8">
 				<Button x:Name="BackButton"
 				        HorizontalContentAlignment="Center"
 				        VerticalContentAlignment="Center"
-				        VerticalAlignment="Top"
-				        HorizontalAlignment="Left"
 				        Click="BackButton_Click"
 				        ToolTipService.ToolTip="Back to home">
 					<Button.Content>
@@ -24,6 +22,29 @@
 				<TextBlock Style="{StaticResource HeaderTextBlockStyle}" Text="Install"/>
 			</StackPanel>
 			<Button x:Name="Install" Click="Install_Click" Content="Install"/>
+			<ContentDialog x:Name="Ps1Selector" Title="Select installer script (*.ps1)"
+			               CloseButtonText="Cancel"
+			               DefaultButton="Primary"
+			               PrimaryButtonText="OK"
+			               PrimaryButtonClick="Ps1Selector_OnPrimaryButtonClick">
+				<StackPanel Orientation="Vertical" Spacing="5">
+						<TextBox x:Name="Ps1Path" IsReadOnly="True" PlaceholderText="Browse for a script..."/>
+						<Button Content="Browse" Click="PS1Picker_Click"/>
+					<TextBlock x:Name="InvalidSHAWarn" Visibility="Collapsed" Foreground="Red">
+						Invalid SHA256 checksum! Expand the note below for more info.
+					</TextBlock>
+					<Expander HorizontalAlignment="Stretch">
+						<Expander.Header>
+							<TextBlock>Click to expand note</TextBlock>
+						</Expander.Header>
+						<Expander.Content>
+							<TextBlock Style="{StaticResource BodyStrongTextBlockStyle}">
+								Please browse to the correct PowerShell script to install, the SHA256 hash of the script will be verified before it is run.
+							</TextBlock>
+						</Expander.Content>
+					</Expander>
+				</StackPanel>
+			</ContentDialog>
 			<TextBlock x:Name="WindowsVersion" HorizontalAlignment="Left" VerticalAlignment="Bottom"/>
 		</StackPanel>
 	</Grid>
