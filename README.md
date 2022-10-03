@@ -10,7 +10,7 @@ I couldn't deal with the people asking me how to install Minecraft Bedrock Editi
 
 - Download the latest zip from the [releases]("https://github.com/donut2008/MCInstaller/releases") page
 - Extract it to any directory you prefer
-- Install the app's certificate (instructions can be found [here](#cert-install-instructions))
+- Install the app's certificate (instructions can be found [here](#certificate-installation-instructions))
 - Install the app package (.msixbundle)
 
 Installing Minecraft is pretty straightforward and instructions are available in the app.
